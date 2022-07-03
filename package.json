@@ -1,0 +1,33 @@
+{
+  "name": "my-util-js-functions",
+  "description": "",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "clean": "rm -rf node_modules",
+    "prettier:format": "npx prettier --write .",
+    "prettier:check": "npx prettier --check .",
+    "test": "NODE_ENV=test jest test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bertolo1988/my-util-js-functions.git"
+  },
+  "author": "bertolo1988 <tiagobertolo@gmail.com> (https://github.com/bertolo1988)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bertolo1988/my-util-js-functions/issues"
+  },
+  "homepage": "https://github.com/bertolo1988/my-util-js-functions#readme",
+  "devDependencies": {
+    "jest": "^28.1.2",
+    "prettier": "^2.7.1"
+  },
+  "jest": {
+    "verbose": true,
+    "clearMocks": true
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
