@@ -23,7 +23,7 @@ describe('permutator', () => {
       ['b', 'a', 'c'],
       ['b', 'c', 'a'],
       ['c', 'a', 'b'],
-      ['c', 'b', 'a'],
+      ['c', 'b', 'a']
     ]
     for (let result of results) {
       expect(
