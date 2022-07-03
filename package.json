@@ -1,7 +1,7 @@
 {
   "name": "my-util-js-functions",
-  "description": "",
-  "version": "1.0.0",
+  "description": "Javascript implementation of widely known algorithms, functions and data structures.",
+  "version": "0.0.1-beta.0",
   "main": "src/index.js",
   "scripts": {
     "clean": "rm -rf node_modules",

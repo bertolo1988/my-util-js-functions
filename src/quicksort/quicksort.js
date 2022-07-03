@@ -1,5 +1,3 @@
-// https://stackoverflow.com/questions/5185864/javascript-quicksort
-
 function quicksort(array) {
   if (array.length <= 1) {
     return array

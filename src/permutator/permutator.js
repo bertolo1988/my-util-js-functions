@@ -1,5 +1,3 @@
-// https://stackoverflow.com/questions/9960908/permutations-in-javascript/37580979#37580979
-
 function permutator(permutation) {
   var length = permutation.length,
     result = [permutation.slice()],
