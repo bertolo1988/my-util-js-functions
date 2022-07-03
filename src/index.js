@@ -1,11 +1,13 @@
 const { bubblesort } = require('./bubblesort/bubblesort')
 const { factorialize } = require('./factorialize/factorialize')
+const { fibonacci } = require('./fibonacci/fibonacci')
 const { permutator } = require('./permutator/permutator')
 const { quicksort } = require('./quicksort/quicksort')
 
 module.exports = {
   bubblesort,
   factorialize,
+  fibonacci,
   permutator,
   quicksort
 }
