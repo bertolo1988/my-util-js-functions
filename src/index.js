@@ -8,6 +8,7 @@ const {
   getMaximumOfArray,
   getMinimumOfArray
 } = require('./array-utils/array-utils')
+const { Graph } = require('./graph/graph')
 const { bubblesort } = require('./bubblesort/bubblesort')
 const {
   factorialize,
@@ -31,6 +32,7 @@ module.exports = {
   getShortestArrayOfArrayOfArrays,
   getMaximumOfArray,
   getMinimumOfArray,
+  Graph,
   permutator,
   quicksort
 }
