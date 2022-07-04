@@ -16,4 +16,32 @@ function arrayExistsOnArrayOfArrays(arrayOfArrays, targetArray) {
   return false
 }
 
-module.exports = { areArraysEqual, arrayExistsOnArrayOfArrays }
+function filterUniqueArraysOnArrayOfArrays(arrays) {
+  let uniques = []
+  for (let arr of arrays) {
+    if (!arrayExistsOnArrayOfArrays(uniques, arr)) {
+      uniques.push(arr)
+    }
+  }
+  return uniques
+}
+
+function getMaximumOfArray(arr) {
+  return arr.reduce(function (p, v) {
+    return p > v ? p : v
+  })
+}
+
+function getMinimumOfArray(arr) {
+  return arr.reduce(function (p, v) {
+    return p < v ? p : v
+  })
+}
+
+module.exports = {
+  areArraysEqual,
+  arrayExistsOnArrayOfArrays,
+  filterUniqueArraysOnArrayOfArrays,
+  getMaximumOfArray,
+  getMinimumOfArray
+}

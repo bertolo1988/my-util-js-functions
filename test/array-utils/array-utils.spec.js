@@ -1,4 +1,11 @@
-const { areArraysEqual, arrayExistsOnArrayOfArrays } = require('../../src')
+const _ = require('lodash')
+const {
+  areArraysEqual,
+  arrayExistsOnArrayOfArrays,
+  filterUniqueArraysOnArrayOfArrays,
+  getMaximumOfArray,
+  getMinimumOfArray
+} = require('../../src')
 
 describe('areArraysEqual', () => {
   it('should return true if arrays are both empty', () => {
@@ -112,5 +119,52 @@ describe('arrayExistsOnArrayOfArrays', () => {
     const arrays = [[]]
     const targetArray = []
     expect(arrayExistsOnArrayOfArrays(arrays, targetArray)).toBe(true)
+  })
+})
+
+describe('filterUniqueArraysOnArrayOfArrays', () => {
+  it('should return only the unique array elements and get rid of the repetitions', () => {
+    const arrays = [
+      [1, 2],
+      [1, 2],
+      [-1, 1]
+    ]
+    const expectedResult = [
+      [1, 2],
+      [-1, 1]
+    ]
+    const results = filterUniqueArraysOnArrayOfArrays(arrays)
+    expect(_.isEqual(results, expectedResult)).toBe(true)
+  })
+
+  it('should return empty array if array of arrays is empty', () => {
+    const arrays = []
+    const expectedResult = []
+    const results = filterUniqueArraysOnArrayOfArrays(arrays)
+    expect(_.isEqual(results, expectedResult)).toBe(true)
+  })
+})
+
+describe('getMaximumOfArray', () => {
+  it('should return the biggest element in the array', () => {
+    const input = [1, 2, 3]
+    expect(getMaximumOfArray(input)).toBe(3)
+  })
+
+  it('should return the biggest element in the array even if they are bigger than 10^7', () => {
+    const input = [0, 1000000000]
+    expect(getMaximumOfArray(input)).toBe(1000000000)
+  })
+})
+
+describe('getMinimumOfArray', () => {
+  it('should return the lowest element in the array', () => {
+    const input = [1, 2, 3]
+    expect(getMinimumOfArray(input)).toBe(1)
+  })
+
+  it('should return the lowest element in the array even if they are bigger than 10^7', () => {
+    const input = [0, 1000000000]
+    expect(getMinimumOfArray(input)).toBe(0)
   })
 })

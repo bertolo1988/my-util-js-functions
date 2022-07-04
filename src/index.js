@@ -1,6 +1,9 @@
 const {
   areArraysEqual,
-  arrayExistsOnArrayOfArrays
+  arrayExistsOnArrayOfArrays,
+  filterUniqueArraysOnArrayOfArrays,
+  getMaximumOfArray,
+  getMinimumOfArray
 } = require('./array-utils/array-utils')
 const { bubblesort } = require('./bubblesort/bubblesort')
 const {
@@ -14,11 +17,14 @@ const { quicksort } = require('./quicksort/quicksort')
 module.exports = {
   areArraysEqual,
   arrayExistsOnArrayOfArrays,
+  filterUniqueArraysOnArrayOfArrays,
   bubblesort,
   factorialize,
   factorializeBigInt,
   fibonacci,
   fibonacciBigInt,
+  getMaximumOfArray,
+  getMinimumOfArray,
   permutator,
   quicksort
 }
