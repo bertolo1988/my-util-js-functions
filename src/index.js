@@ -2,6 +2,8 @@ const {
   areArraysEqual,
   arrayExistsOnArrayOfArrays,
   filterUniqueArraysOnArrayOfArrays,
+  getLongestArrayOfArrayOfArrays,
+  getShortestArrayOfArrayOfArrays,
   getMaximumOfArray,
   getMinimumOfArray
 } = require('./array-utils/array-utils')
@@ -23,6 +25,8 @@ module.exports = {
   factorializeBigInt,
   fibonacci,
   fibonacciBigInt,
+  getLongestArrayOfArrayOfArrays,
+  getShortestArrayOfArrayOfArrays,
   getMaximumOfArray,
   getMinimumOfArray,
   permutator,

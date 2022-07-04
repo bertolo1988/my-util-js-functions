@@ -3,6 +3,8 @@ const {
   areArraysEqual,
   arrayExistsOnArrayOfArrays,
   filterUniqueArraysOnArrayOfArrays,
+  getLongestArrayOfArrayOfArrays,
+  getShortestArrayOfArrayOfArrays,
   getMaximumOfArray,
   getMinimumOfArray
 } = require('../../src')
@@ -166,5 +168,27 @@ describe('getMinimumOfArray', () => {
   it('should return the lowest element in the array even if they are bigger than 10^7', () => {
     const input = [0, 1000000000]
     expect(getMinimumOfArray(input)).toBe(0)
+  })
+})
+
+describe('getLongestArrayOfArrayOfArrays', () => {
+  it('should return the longest array in the array of arrays', () => {
+    const input = [
+      [1, 2],
+      [1, 2, 3]
+    ]
+    const result = getLongestArrayOfArrayOfArrays(input)
+    expect(_.isEqual(result, [1, 2, 3])).toBe(true)
+  })
+})
+
+describe('getShortestArrayOfArrayOfArrays', () => {
+  it('should return the shortest array in the array of arrays', () => {
+    const input = [
+      [1, 2],
+      [1, 2, 3]
+    ]
+    const result = getShortestArrayOfArrayOfArrays(input)
+    expect(_.isEqual(result, [1, 2])).toBe(true)
   })
 })

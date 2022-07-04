@@ -38,10 +38,24 @@ function getMinimumOfArray(arr) {
   })
 }
 
+function getLongestArrayOfArrayOfArrays(arr) {
+  return arr.reduce(function (p, v) {
+    return p.length > v.length ? p : v
+  })
+}
+
+function getShortestArrayOfArrayOfArrays(arr) {
+  return arr.reduce(function (p, v) {
+    return p.length < v.length ? p : v
+  })
+}
+
 module.exports = {
   areArraysEqual,
   arrayExistsOnArrayOfArrays,
   filterUniqueArraysOnArrayOfArrays,
+  getLongestArrayOfArrayOfArrays,
+  getShortestArrayOfArrayOfArrays,
   getMaximumOfArray,
   getMinimumOfArray
 }
