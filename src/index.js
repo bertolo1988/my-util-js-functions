@@ -1,4 +1,7 @@
-const { areArraysEqual } = require('./array-utils/array-utils')
+const {
+  areArraysEqual,
+  arrayExistsOnArrayOfArrays
+} = require('./array-utils/array-utils')
 const { bubblesort } = require('./bubblesort/bubblesort')
 const {
   factorialize,
@@ -10,6 +13,7 @@ const { quicksort } = require('./quicksort/quicksort')
 
 module.exports = {
   areArraysEqual,
+  arrayExistsOnArrayOfArrays,
   bubblesort,
   factorialize,
   factorializeBigInt,
