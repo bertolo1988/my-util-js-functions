@@ -2,6 +2,7 @@ const _ = require('lodash')
 const {
   areArraysEqual,
   arrayExistsOnArrayOfArrays,
+  countOccurrencesArrayOnArrayOfArrays,
   filterUniqueArraysOnArrayOfArrays,
   getLongestArrayOfArrayOfArrays,
   getShortestArrayOfArrayOfArrays,
@@ -190,5 +191,25 @@ describe('getShortestArrayOfArrayOfArrays', () => {
     ]
     const result = getShortestArrayOfArrayOfArrays(input)
     expect(_.isEqual(result, [1, 2])).toBe(true)
+  })
+})
+
+describe('countOccurrencesArrayOnArrayOfArrays', () => {
+  it('should return three occurrences of array [1, 2]', () => {
+    const input = [
+      [1, 2],
+      [1, 2],
+      [1, 2, 3],
+      [1, 2],
+      [-1, 0]
+    ]
+    const result = countOccurrencesArrayOnArrayOfArrays(input, [1, 2])
+    expect(result).toBe(3)
+  })
+
+  it('should return 0 occurrences of array [1, 2]', () => {
+    const input = []
+    const result = countOccurrencesArrayOnArrayOfArrays(input, [1, 2])
+    expect(result).toBe(0)
   })
 })

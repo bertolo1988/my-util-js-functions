@@ -1,6 +1,7 @@
 const {
   areArraysEqual,
   arrayExistsOnArrayOfArrays,
+  countOccurrencesArrayOnArrayOfArrays,
   filterUniqueArraysOnArrayOfArrays,
   getLongestArrayOfArrayOfArrays,
   getShortestArrayOfArrayOfArrays,
@@ -19,12 +20,13 @@ const { quicksort } = require('./quicksort/quicksort')
 module.exports = {
   areArraysEqual,
   arrayExistsOnArrayOfArrays,
-  filterUniqueArraysOnArrayOfArrays,
   bubblesort,
+  countOccurrencesArrayOnArrayOfArrays,
   factorialize,
   factorializeBigInt,
   fibonacci,
   fibonacciBigInt,
+  filterUniqueArraysOnArrayOfArrays,
   getLongestArrayOfArrayOfArrays,
   getShortestArrayOfArrayOfArrays,
   getMaximumOfArray,

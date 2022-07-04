@@ -16,6 +16,14 @@ function arrayExistsOnArrayOfArrays(arrayOfArrays, targetArray) {
   return false
 }
 
+function countOccurrencesArrayOnArrayOfArrays(arrays, targetArray) {
+  let count = 0
+  for (let arr of arrays) {
+    if (areArraysEqual(targetArray, arr)) count++
+  }
+  return count
+}
+
 function filterUniqueArraysOnArrayOfArrays(arrays) {
   let uniques = []
   for (let arr of arrays) {
@@ -53,6 +61,7 @@ function getShortestArrayOfArrayOfArrays(arr) {
 module.exports = {
   areArraysEqual,
   arrayExistsOnArrayOfArrays,
+  countOccurrencesArrayOnArrayOfArrays,
   filterUniqueArraysOnArrayOfArrays,
   getLongestArrayOfArrayOfArrays,
   getShortestArrayOfArrayOfArrays,
