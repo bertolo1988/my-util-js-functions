@@ -1,7 +1,7 @@
 {
   "name": "my-util-js-functions",
   "description": "Javascript implementation of widely known algorithms, functions and data structures.",
-  "version": "0.0.2-beta.0",
+  "version": "0.0.3-beta.0",
   "main": "src/index.js",
   "keywords": [
     "algorithm",
