@@ -11,11 +11,11 @@ Javascript implementation of widely known algorithms, functions and data structu
 ## How to use?
 
 ```
-const { quicksort } = require('my-util-js-functions');
+const { quicksort } = require('my-util-js-functions')
 
-const unsortedArray = [3,2,1,10,-5];
-const sortedArray = quicksort(unsortedArray);
-console.log(sortedArray);
+const unsortedArray = [3, 2, 1, 10, -5]
+const sortedArray = quicksort(unsortedArray)
+console.log(sortedArray)
 ```
 
 ## Functions available
