@@ -3,6 +3,13 @@
   "description": "Javascript implementation of widely known algorithms, functions and data structures.",
   "version": "0.0.1-beta.0",
   "main": "src/index.js",
+  "keywords": [
+    "algorithm",
+    "data-structures",
+    "functions",
+    "quicksort",
+    "permutator"
+  ],
   "scripts": {
     "clean": "rm -rf node_modules",
     "prettier:format": "npx prettier --write .",
