@@ -11,7 +11,9 @@ Javascript implementation of widely known algorithms, functions and data structu
 ## How to use?
 
 ### Example1 - quicksort
-```
+
+
+```javascript
 const { quicksort } = require('my-util-js-functions')
 
 const unsortedArray = [3, 2, 1, 10, -5]
@@ -21,7 +23,8 @@ console.log(sortedArray)
 
 ### Example2 - fibonacciBigInt
 
-```
+
+```javascript
 const { fibonacciBigInt } = require('my-util-js-functions')
 
 console.log(fibonacciBigInt(BigInt(125)))
