@@ -1,3 +1,4 @@
+const { areArraysEqual } = require('./array-utils/array-utils')
 const { bubblesort } = require('./bubblesort/bubblesort')
 const {
   factorialize,
@@ -8,6 +9,7 @@ const { permutator } = require('./permutator/permutator')
 const { quicksort } = require('./quicksort/quicksort')
 
 module.exports = {
+  areArraysEqual,
   bubblesort,
   factorialize,
   factorializeBigInt,
