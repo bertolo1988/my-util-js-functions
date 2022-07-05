@@ -63,17 +63,32 @@ class Graph {
     return false
   }
 
-  dfs(goal, v = this.vertices[0], discovered = []) {
+  isTherePath(goal, v = this.vertices[0], discovered = []) {
     let adj = this.adjacent
     discovered[v] = true
     for (let i = 0; i < adj[v].length; i++) {
       let w = adj[v][i]
 
       if (!discovered[w]) {
-        this.dfs(goal, w, discovered)
+        this.isTherePath(goal, w, discovered)
       }
     }
     return discovered[goal] || false
+  }
+
+  dfs(goal, v = this.vertices[0], path = []) {
+    let adj = this.adjacent
+    path.push(v)
+    if (path.includes(goal)) {
+      return { distance: path.length - 1, path: path.reverse() }
+    }
+    for (let i = 0; i < adj[v].length; i++) {
+      let w = adj[v][i]
+      if (!path.includes(w)) {
+        return this.dfs(goal, w, [...path])
+      }
+    }
+    return { distance: undefined, path: undefined }
   }
 }
 
