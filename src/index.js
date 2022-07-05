@@ -15,6 +15,7 @@ const {
   factorializeBigInt
 } = require('./factorialize/factorialize')
 const { fibonacci, fibonacciBigInt } = require('./fibonacci/fibonacci')
+const { memoize } = require('./memoize/memoize')
 const { permutator } = require('./permutator/permutator')
 const { quicksort } = require('./quicksort/quicksort')
 
@@ -33,6 +34,7 @@ module.exports = {
   getMaximumOfArray,
   getMinimumOfArray,
   Graph,
+  memoize,
   permutator,
   quicksort
 }
