@@ -9,8 +9,8 @@ const factorialize = _.memoize((num) => {
 })
 
 const factorializeBigInt = _.memoize((num) => {
-  if (num < 0) return BigInt(-1)
-  else if (num == 0) return BigInt(1)
+  if (num < BigInt(0)) return BigInt(-1)
+  else if (num == BigInt(0)) return BigInt(1)
   else {
     return num * factorializeBigInt(num - BigInt(1))
   }
