@@ -54,6 +54,23 @@ describe('Graph', () => {
     it('should return an instance with methods addEdge', () => {
       expect(new Graph().addEdge).toBeDefined()
     })
+
+    it('addEdge() should increase the number of edges', () => {
+      const graph = new Graph()
+      graph.addVertex('A')
+      graph.addVertex('B')
+      graph.addEdge('A', 'B')
+      expect(graph.edges).toBe(1)
+    })
+
+    it('addEdge() should create the required adjacencies', () => {
+      const graph = new Graph()
+      graph.addVertex('A')
+      graph.addVertex('B')
+      graph.addEdge('A', 'B')
+      expect(_.isEqual(graph.adjacent['A'], ['B'])).toBe(true)
+      expect(_.isEqual(graph.adjacent['B'], ['A'])).toBe(true)
+    })
   })
 
   describe('isTherePath', () => {

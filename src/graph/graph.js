@@ -16,6 +16,30 @@ class Graph {
     this.edges++
   }
 
+  removeEdge(v, w) {
+    this.adjacent[v] = this.adjacent[v].filter((e) => e !== w)
+    this.adjacent[w] = this.adjacent[w].filter((e) => e !== v)
+    this.edges--
+  }
+
+  removeVertex(v) {
+    this.vertices = this.vertices.filter((e) => e !== v)
+    for (let w of this.adjacent[v]) {
+      this.adjacent[w] = this.adjacent[w].filter((e) => e !== v)
+    }
+    delete this.adjacent[v]
+  }
+
+  getAllConnectedVertices(v) {
+    let connected = [...this.adjacent[v]]
+    for (let vertice of this.vertices.filter(
+      (item) => !connected.includes(item)
+    )) {
+      if (vertice !== v && this.isTherePath(vertice, v)) connected.push(vertice)
+    }
+    return connected
+  }
+
   bfs(goal, root = this.vertices[0]) {
     let adj = this.adjacent
 
