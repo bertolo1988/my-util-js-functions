@@ -155,6 +155,23 @@ describe('Graph', () => {
       const allVerticesExceptG = graph3.vertices.filter((e) => e != 'G').sort()
       expect(_.isEqual(connectedVertices, allVerticesExceptG)).toBe(true)
     })
+
+    it('should be able to retrieve 2 unconnected subgraphs', () => {
+      const graph = new Graph()
+      graph.addVertex('A')
+      graph.addVertex('B')
+      graph.addVertex('C')
+      graph.addVertex('D')
+      graph.addVertex('E')
+      graph.addEdge('A', 'B')
+      graph.addEdge('B', 'C')
+      graph.addEdge('D', 'E')
+
+      const connectedVerticesToE = graph.getAllConnectedVertices('E')
+      expect(_.isEqual(connectedVerticesToE, ['D'])).toBe(true)
+      const connectedVerticesToB = graph.getAllConnectedVertices('B')
+      expect(_.isEqual(connectedVerticesToB, ['A', 'C'])).toBe(true)
+    })
   })
 
   describe('bfs', () => {
