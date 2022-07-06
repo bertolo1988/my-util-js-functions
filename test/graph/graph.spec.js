@@ -91,15 +91,24 @@ describe('Graph', () => {
     })
   })
 
-  describe('removeEdge', () => {
-    it('should successfully remove an edge', () => {
+  describe('removeVertex', () => {
+    it('should successfully remove a vertex from a graph that has no edges', () => {
+      const graph = new Graph()
+      graph.addVertex('A')
+      graph.removeVertex('A')
+      expect(graph.vertices.length).toBe(0)
+    })
+
+    it('should successfully remove a vertex from a graph with two vertices and one edge between them', () => {
       const graph = new Graph()
       graph.addVertex('A')
       graph.addVertex('B')
       graph.addEdge('A', 'B')
-      graph.removeEdge('A', 'B')
-      expect(_.isEqual(graph.adjacent['A'], ['B'])).toBe(false)
-      expect(_.isEqual(graph.adjacent['B'], ['A'])).toBe(false)
+      graph.removeVertex('A')
+      expect(graph.vertices[0]).toBe('B')
+      expect(graph.adjacent['A']).toBeUndefined()
+      expect(_.isEqual(graph.adjacent['B'], [])).toBe(true)
+      expect(graph.edges).toBe(0)
     })
   })
 

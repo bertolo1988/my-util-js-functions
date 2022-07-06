@@ -24,10 +24,15 @@ class Graph {
 
   removeVertex(v) {
     this.vertices = this.vertices.filter((e) => e !== v)
+    let totalRemovedEdges = 0
     for (let w of this.adjacent[v]) {
+      const initialAdjacentsCount = this.adjacent[w].length
       this.adjacent[w] = this.adjacent[w].filter((e) => e !== v)
+      const finalAdjacentsCount = this.adjacent[w].length
+      totalRemovedEdges += initialAdjacentsCount - finalAdjacentsCount
     }
     delete this.adjacent[v]
+    this.edges -= totalRemovedEdges
   }
 
   getAllConnectedVertices(v) {
