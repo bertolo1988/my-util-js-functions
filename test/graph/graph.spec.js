@@ -79,6 +79,30 @@ describe('Graph', () => {
     })
   })
 
+  describe('removeEdge', () => {
+    it('should successfully remove an edge', () => {
+      const graph = new Graph()
+      graph.addVertex('A')
+      graph.addVertex('B')
+      graph.addEdge('A', 'B')
+      graph.removeEdge('A', 'B')
+      expect(_.isEqual(graph.adjacent['A'], ['B'])).toBe(false)
+      expect(_.isEqual(graph.adjacent['B'], ['A'])).toBe(false)
+    })
+  })
+
+  describe('removeEdge', () => {
+    it('should successfully remove an edge', () => {
+      const graph = new Graph()
+      graph.addVertex('A')
+      graph.addVertex('B')
+      graph.addEdge('A', 'B')
+      graph.removeEdge('A', 'B')
+      expect(_.isEqual(graph.adjacent['A'], ['B'])).toBe(false)
+      expect(_.isEqual(graph.adjacent['B'], ['A'])).toBe(false)
+    })
+  })
+
   describe('isTherePath', () => {
     it('should find path between A and E in graph1', () => {
       expect(graph1.isTherePath('A', 'E')).toBe(true)
