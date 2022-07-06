@@ -144,6 +144,19 @@ describe('Graph', () => {
     })
   })
 
+  describe('getAllConnectedVertices', () => {
+    it('should return an empty list of connected vertices for F in graph1', () => {
+      const connectedVertices = graph1.getAllConnectedVertices('F')
+      expect(_.isEqual(connectedVertices, [])).toBe(true)
+    })
+
+    it('all vertices are connected to G in graph3', () => {
+      const connectedVertices = graph3.getAllConnectedVertices('G').sort()
+      const allVerticesExceptG = graph3.vertices.filter((e) => e != 'G').sort()
+      expect(_.isEqual(connectedVertices, allVerticesExceptG)).toBe(true)
+    })
+  })
+
   describe('bfs', () => {
     describe('distance', () => {
       it('distance between A and E is 3 in graph1', () => {
