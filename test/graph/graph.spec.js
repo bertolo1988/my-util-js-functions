@@ -48,6 +48,12 @@ describe('Graph', () => {
     it('should return an instance with methods addVertex', () => {
       expect(new Graph().addVertex).toBeDefined()
     })
+
+    it('should add a vertex to the list of vertices', () => {
+      const graph = new Graph()
+      graph.addVertex('A')
+      expect(graph.vertices.includes('A')).toBe(true)
+    })
   })
 
   describe('addEdge', () => {
