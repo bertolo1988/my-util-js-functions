@@ -7,7 +7,8 @@ const {
   getLongestArrayOfArrayOfArrays,
   getShortestArrayOfArrayOfArrays,
   getMaximumOfArray,
-  getMinimumOfArray
+  getMinimumOfArray,
+  swapArrayElementsByIndex
 } = require('../../src')
 
 describe('areArraysEqual', () => {
@@ -211,5 +212,25 @@ describe('countOccurrencesArrayOnArrayOfArrays', () => {
     const input = []
     const result = countOccurrencesArrayOnArrayOfArrays(input, [1, 2])
     expect(result).toBe(0)
+  })
+})
+
+describe('swapArrayElementsByIndex', () => {
+  it('should swap 1 with null', () => {
+    const input = [1, 'a', 'b', 'd', 2, null]
+    const swappedResult = swapArrayElementsByIndex(input, 5, 0)
+    expect(_.isEqual(swappedResult, [null, 'a', 'b', 'd', 2, 1])).toBe(true)
+  })
+
+  it('should swap a with b', () => {
+    const input = ['a', 'b', 'c', 'd']
+    const swappedResult = swapArrayElementsByIndex(input, 0, 1)
+    expect(_.isEqual(swappedResult, ['b', 'a', 'c', 'd'])).toBe(true)
+  })
+
+  it('should not change original array', () => {
+    const input = ['a', 'b', 'c', 'd']
+    swapArrayElementsByIndex(input, 0, 1)
+    expect(_.isEqual(input, ['a', 'b', 'c', 'd'])).toBe(true)
   })
 })

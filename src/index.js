@@ -6,7 +6,8 @@ const {
   getLongestArrayOfArrayOfArrays,
   getShortestArrayOfArrayOfArrays,
   getMaximumOfArray,
-  getMinimumOfArray
+  getMinimumOfArray,
+  swapArrayElementsByIndex
 } = require('./array-utils/array-utils')
 const { bubblesort } = require('./bubblesort/bubblesort')
 const { cloneObject } = require('./object-utils/object-utils')
@@ -38,5 +39,6 @@ module.exports = {
   Graph,
   memoize,
   permutator,
-  quicksort
+  quicksort,
+  swapArrayElementsByIndex
 }

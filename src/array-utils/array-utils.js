@@ -58,6 +58,15 @@ function getShortestArrayOfArrayOfArrays(arr) {
   })
 }
 
+function swapArrayElementsByIndex(w, indexA, indexB) {
+  const cloneW = [...w]
+  const elementA = cloneW[indexA]
+  const elementB = cloneW[indexB]
+  cloneW[indexA] = elementB
+  cloneW[indexB] = elementA
+  return cloneW
+}
+
 module.exports = {
   areArraysEqual,
   arrayExistsOnArrayOfArrays,
@@ -66,5 +75,6 @@ module.exports = {
   getLongestArrayOfArrayOfArrays,
   getShortestArrayOfArrayOfArrays,
   getMaximumOfArray,
-  getMinimumOfArray
+  getMinimumOfArray,
+  swapArrayElementsByIndex
 }
