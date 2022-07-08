@@ -43,8 +43,20 @@ describe('fibonacciBigInt', () => {
     expect(result).toBe(1n)
   })
 
-  it('fibonacciBigInt(125n)', () => {
-    const result = fibonacciBigInt(125n)
-    expect(result).toBe(59425114757512643212875125n)
+  it('fibonacciBigInt(2000n)', () => {
+    const input = 2000n
+    const result = fibonacciBigInt(input)
+
+    // bottom up approach takes advantage of memoization
+    for (let i = 0n; i < input; i++) {
+      fibonacciBigInt(i)
+    }
+
+    fibonacciBigInt(input)
+    
+    // this result is taken from http://www.fullbooks.com/The-first-1001-Fibonacci-Numbers.html
+    expect(result).toBe(
+      4224696333392304878706725602341482782579852840250681098010280137314308584370130707224123599639141511088446087538909603607640194711643596029271983312598737326253555802606991585915229492453904998722256795316982874482472992263901833716778060607011615497886719879858311468870876264597369086722884023654422295243347964480139515349562972087652656069529806499841977448720155612802665404554171717881930324025204312082516817125n
+    )
   })
 })
