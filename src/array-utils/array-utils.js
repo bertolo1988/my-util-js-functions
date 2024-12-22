@@ -67,6 +67,10 @@ function swapArrayElementsByIndex(w, indexA, indexB) {
   return cloneW
 }
 
+function insertAtIndex(element, index, inputArray = []) {
+  return [...inputArray.slice(0, index), element, ...inputArray.slice(index)]
+}
+
 module.exports = {
   areArraysEqual,
   arrayExistsOnArrayOfArrays,
@@ -76,5 +80,6 @@ module.exports = {
   getShortestArrayOfArrayOfArrays,
   getMaximumOfArray,
   getMinimumOfArray,
+  insertAtIndex,
   swapArrayElementsByIndex
 }

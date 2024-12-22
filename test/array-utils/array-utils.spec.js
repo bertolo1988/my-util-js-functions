@@ -8,6 +8,7 @@ const {
   getShortestArrayOfArrayOfArrays,
   getMaximumOfArray,
   getMinimumOfArray,
+  insertAtIndex,
   swapArrayElementsByIndex
 } = require('../../src')
 
@@ -43,6 +44,7 @@ describe('areArraysEqual', () => {
       expect(areArraysEqual(input1, input2)).toBe(false)
     })
   })
+
   describe('numbers', () => {
     it('should return true if arrays of numbers are the same', () => {
       const input1 = [1, 2, 0, 1000, -1]
@@ -187,8 +189,9 @@ describe('getLongestArrayOfArrayOfArrays', () => {
 describe('getShortestArrayOfArrayOfArrays', () => {
   it('should return the shortest array in the array of arrays', () => {
     const input = [
-      [1, 2],
-      [1, 2, 3]
+      [1, 2, 3],
+      [(-1, 'a'), 'aaam', '?'],
+      [1, 2]
     ]
     const result = getShortestArrayOfArrayOfArrays(input)
     expect(_.isEqual(result, [1, 2])).toBe(true)
@@ -232,5 +235,60 @@ describe('swapArrayElementsByIndex', () => {
     const input = ['a', 'b', 'c', 'd']
     swapArrayElementsByIndex(input, 0, 1)
     expect(_.isEqual(input, ['a', 'b', 'c', 'd'])).toBe(true)
+  })
+})
+
+describe('insertAtIndex', () => {
+  it('should insert 1 at index 0, in empty array', () => {
+    const element = 1
+    const index = 0
+
+    const result = insertAtIndex(element, index)
+    expect(result).toEqual([1])
+  })
+
+  it('should insert 1 at index 0, in empty array', () => {
+    const element = 1
+    const index = 0
+    const inputArray = []
+    const result = insertAtIndex(element, index, inputArray)
+    expect(result).toEqual([1])
+  })
+
+  it('should insert null in the first position of the array', () => {
+    const element = null
+    const index = 0
+    const inputArray = ['banana', 1, 2, 'apple']
+    const result = insertAtIndex(element, index, inputArray)
+    expect(result).toBeInstanceOf(Array)
+    expect(result[0]).toEqual(null)
+    expect(result[1]).toEqual('banana')
+    expect(result[2]).toEqual(1)
+    expect(result[3]).toEqual(2)
+    expect(result[4]).toEqual('apple')
+  })
+
+  it('should insert "dog" at the last index, even if it exceeds input array length', () => {
+    const element = 'dog'
+    const index = 3
+    const inputArray = ['banana', 'apple', 'cat']
+    const result = insertAtIndex(element, index, inputArray)
+    expect(result).toBeInstanceOf(Array)
+    expect(result[0]).toEqual('banana')
+    expect(result[1]).toEqual('apple')
+    expect(result[2]).toEqual('cat')
+    expect(result[3]).toEqual('dog')
+  })
+
+  it('should insert "dog" at the last index, even if it exceeds input array length', () => {
+    const element = 'dog'
+    const index = 5
+    const inputArray = ['banana', 'apple', 'cat']
+    const result = insertAtIndex(element, index, inputArray)
+    expect(result).toBeInstanceOf(Array)
+    expect(result[0]).toEqual('banana')
+    expect(result[1]).toEqual('apple')
+    expect(result[2]).toEqual('cat')
+    expect(result[3]).toEqual('dog')
   })
 })
