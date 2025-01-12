@@ -23,6 +23,7 @@ const { permutator } = require('./permutator/permutator')
 const { isBigInt } = require('./big-int-utils/big-int-utils')
 const { isNumber } = require('./is-utils')
 const LRUCache = require('./lru-cache/lru-cache')
+const memoize = require('./memoize')
 
 module.exports = {
   areArraysEqual,
@@ -44,6 +45,7 @@ module.exports = {
   isBigInt,
   isNumber,
   LRUCache,
+  memoize,
   permutator,
   quicksort,
   swapArrayElementsByIndex
