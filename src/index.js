@@ -21,6 +21,8 @@ const { fibonacci, fibonacciBigInt } = require('./fibonacci/fibonacci')
 const { Graph } = require('./graphs/graph')
 const { permutator } = require('./permutator/permutator')
 const { isBigInt } = require('./big-int-utils/big-int-utils')
+const { isNumber } = require('./is-utils')
+const LRUCache = require('./lru-cache/lru-cache')
 
 module.exports = {
   areArraysEqual,
@@ -40,6 +42,8 @@ module.exports = {
   Graph,
   insertAtIndex,
   isBigInt,
+  isNumber,
+  LRUCache,
   permutator,
   quicksort,
   swapArrayElementsByIndex
